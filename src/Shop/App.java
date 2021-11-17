@@ -46,23 +46,23 @@ public class App {
     
     public void run(){
         while (appRunning) {
-            System.out.println("\nВыберите опцию\n"
-                    + "0) Выход\n1) Добавить товар\n"
-                    + "2) Вывести список товаров\n"
-                    + "3) Добавить покупателя\n"
-                    + "4) Вывести список покупателей\n"
-                    + "5) Совершить покупку\n"
-                    + "6) Вывести список покупок\n"
-                    + "7) Добавить покупателю денег\n"
-                    + "8) Прибыль магазина\n"
-                    + "9) Прибыль магазина за определенный месяц");
-            System.out.print("Опция: ");
+            System.out.println("\nВыберите операцию\n"
+                    + " -0- Выход\n -1- Добавить товар\n"
+                    + " -2- Список товаров\n"
+                    + " -3- Добавить покупателя\n"
+                    + " -4- Список покупателей\n"
+                    + " -5- Совершить покупку\n"
+                    + " -6- Список покупок\n"
+                    + " -7- Добавить покупателю денег\n"
+                    + " -8- Прибыль магазина\n"
+                    + " -9- Прибыль магазина за определенный месяц");
+            System.out.print("Операция: ");
             int choise = inputInt();
 
             switch (choise) {
                 case 0:
                     //Выйти из программы
-                    System.out.println("Досвидания, приходите еще!");
+                    System.out.println("Хорошего дня, приходите еще!");
                     appRunning = false;
                     break;
                 case 1:
@@ -83,12 +83,10 @@ public class App {
                     }
                     break;
                 case 3:
-                    //Добавить покупателя
                     customersArray.add(addCustomer());
                     keeping.saveCustomers(customersArray);
                     break;
                 case 4:
-                    //Вывести список покупателей
                     if (!customersArray.isEmpty()) {
                         System.out.println("---------- Список покупателей ----------");
                         for (int i = 0; i < customersArray.size(); i++) {
@@ -100,7 +98,6 @@ public class App {
                     }
                     break;
                 case 5:
-                    //Совершить покупку
                     if (!productsArray.isEmpty() || !customersArray.isEmpty()) {
                         historysArray.add(addHistory());
                         keeping.saveHistorys(historysArray);
@@ -112,7 +109,6 @@ public class App {
                     break;
 
                 case 6:
-                    //Вывести список покупок
                     if (!historysArray.isEmpty()) {
                         System.out.println("---------- Список историй покупок ----------");
                         for (int i = 0; i < historysArray.size(); i++) {
@@ -124,7 +120,6 @@ public class App {
                     }
                     break;
                 case 7:
-                    //Добавить покупателю денег
                     if (!customersArray.isEmpty()) {
                         System.out.println("---------- Список покупателей ----------");
                         for (int i = 0; i < customersArray.size(); i++) {
@@ -142,11 +137,9 @@ public class App {
                     }
                     break;
                 case 8:
-                    //Вывести прибыль магазина
                     System.out.println("\nПрибыль магазина " + shopStonks + "€\n");
                     break;
                 case 9:
-                    //вывести прибыль за определенный месяц
                     System.out.print("Выберите месяц(1-12) -->");
                     int month = inputInt();
                     double stonks = 0;
@@ -172,10 +165,8 @@ public class App {
         System.out.println(" ");
         System.out.print("Производитель: ");
         product.setBrand(scanner.next());
-        
-        System.out.print("Тип: ");
-        product.setType(scanner.next());
-        
+       
+             
         System.out.print("Размер: ");
         product.setSize(inputInt());
         

@@ -17,7 +17,6 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String brand;
-    private String type;
     private int size;
     private double price;
 
@@ -37,14 +36,6 @@ public class Product implements Serializable {
         this.brand = brand;
     }
 
-    public String getType(){
-        return type;
-    }
-    
-    public void setType(String type){
-        this.type = type;
-    }
-    
     public int getSize() {
         return size;
     }
@@ -63,6 +54,6 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return "Product{" + "brand=" + brand + ", type=" + type + ", size=" + size + ", price=" + price + '}';
+        return "Product{" + "brand=" + brand +  ", size=" + size + ", price=" + price + '}';
     }
 }
